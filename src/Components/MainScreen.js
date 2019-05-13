@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import { StyleSheet, Platform } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import { Icon } from "native-base"; // 추가된 코드
 
-class MainScreen extends Component {
+export class MainScreen extends Component {
+  // navigationOptions 코드 추가
+  static navigationOptions = {
+    headerLeft: <Icon name="ios-camera" style={{ paddingLeft: 10 }} />,
+    title: "Instagram",
+    headerRight: <Icon name="ios-send" style={{ paddingRight: 10 }} />
+  };
+
   render() {
     return (
       <View style={styles.container}>
