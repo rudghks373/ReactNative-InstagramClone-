@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Icon } from 'native-base'; // 추가된 코드
 
 export default class MainScreen extends Component {
-    
-    static navigationOptions = {
-        headerLeft: <Icon name='ios-camera' style={{ paddingLeft:10 }}/>,
-        title: 'Instagram',
-        headerRight: <Icon name='ios-send' style={{ paddingRight:10 }}/>,
-      }
 
-    render(){
-        return (
-            <View style={StyleSheet.container}>
-                <Text>MainScreen</Text>
-            </View>
-        );
-    }
+  // navigationOptions 코드 추가
+  static navigationOptions = {
+    headerLeft: <Icon name='ios-camera' style={{ paddingLeft:10 }}/>,
+    title: 'Instagram',
+    headerRight: <Icon name='ios-send' style={{ paddingRight:10 }}/>,
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>   Kyunghwan  </Text>
+        <Text>♡〜٩( ˃́▿˂̀ )۶〜♡</Text>
+      </View>
+    );
+  }
 }
 
-const style = StyleSheet.create({
-    container: {
-        flex :1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
