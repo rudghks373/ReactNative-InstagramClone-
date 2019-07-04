@@ -13,7 +13,7 @@ export default class AddMediaTab extends Component {
     render() {
         return (
             <View style={style.container}>
-                <Text>HomeTab</Text>
+                <Text>AddMediaTab</Text>
             </View>
         );
     }
