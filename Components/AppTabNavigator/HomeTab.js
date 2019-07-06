@@ -24,6 +24,27 @@ export default class HomeTab extends Component {
         .then(res => res.result)
     }
 
+      // 팔로잉 친구 가져오기
+      fetchFollowing() {
+        const data = {
+            id: 2,
+            jsonrpc: "2.0",
+            method: "call",
+            params: [
+              "follow_api",
+              "get_following",
+              ["anpigon", "", "blog", 10]
+            ]
+        };
+        return fetch('https://api.steemit.com',
+        {
+            method: 'POST',
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(res => res.result.map(({following}) => following))
+    }
+
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => (
             <Icon name='ios-home' style={{ color: tintColor }} />
@@ -31,7 +52,8 @@ export default class HomeTab extends Component {
     }
 
     state = {
-        feeds: []
+        feeds: [],
+        followings: []
     }
 
     componentWillMount() {
@@ -40,6 +62,15 @@ export default class HomeTab extends Component {
               feeds
             })
         });
+
+         // 팔로잉 친구 가져오기
+        this.fetchFollowing().then(followings => {
+        this.setState({
+          followings
+        })
+      });
+    }
+  
     }
 
     render() {
