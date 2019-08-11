@@ -16,7 +16,7 @@ export default class ProfileTab extends Component{
                 <Header>
                     <Left><Icon name="md-person-add" style={{ paddingLeft:10 }} /></Left>
                     <Body><Text>anpigon</Text></Body>
-                    <Right><Icon name="back-in-time" style={{ paddingRight:10, fontSize: 32 }} /></Right>
+                    <Right><Icon name="md-build" style={{ paddingRight:10, fontSize: 32 }} /></Right>
                 </Header>
                 <Content>
                 <View style={{flexDirection:'row', paddingTop:10}}>
