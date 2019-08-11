@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { Icon, Container, Content, Header, Left, Body, Right, Button } from 'native-base';
+import { Icon, Container, Content, Header, Left, Body, Right, Button, EntypoIcon } from 'native-base';
 
 export default class ProfileTab extends Component{
+
+    static navigationOptions = {
+        tabBarIcon: ({ tintColor }) => (
+            <Icon name='ios-person' style={{ color: tintColor }} />
+        )
+    }
 
     render() {
         return (
@@ -10,7 +16,7 @@ export default class ProfileTab extends Component{
                 <Header>
                     <Left><Icon name="md-person-add" style={{ paddingLeft:10 }} /></Left>
                     <Body><Text>anpigon</Text></Body>
-                    <Right><EntypoIcon name="back-in-time" style={{ paddingRight:10, fontSize: 32 }} /></Right>
+                    <Right><Icon name="back-in-time" style={{ paddingRight:10, fontSize: 32 }} /></Right>
                 </Header>
                 <Content>
                 <View style={{flexDirection:'row', paddingTop:10}}>
